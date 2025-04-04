@@ -47,9 +47,9 @@ This is a simple **Bookstore Web Application** that allows users to browse and s
 
 3. **Start up the web server**:
    - You just have to run 
-    ```bash 
-    php -S localhost:4000
-    ```
+        ```bash 
+        php -S localhost:4000
+        ```
     This command can be able to run the PHP server on port 4000 without the need of Apache servers.
     You can use Apache servers if needed to 
     N.B: This command runs on linux if you have downloaded the right package on your machine.
@@ -58,25 +58,25 @@ This is a simple **Bookstore Web Application** that allows users to browse and s
 4. **Setting database**:
     - You will need mysql or postgres drivers on your machine to be able to have the project connect to the database. 
     On Linux:
-    ```bash
-    sudo apt install php-mysql
-    sudo apt install php-pgsql
-    ```
+        ```bash
+        sudo apt install php-mysql
+        sudo apt install php-pgsql
+        ```
     - Sadly if you have the knowledge of Docker, Docker cannot connect to MySQL but it can on Postgres but MySQL was chosen for this project. So you can be able to download MySQL server on your local machine and set up everything to make sure it is working well. 
-    ```bash
-    # Downloads mysql server on laptop
-    sudo apt install mysql-server 
+        ```bash
+        # Downloads mysql server on laptop
+        sudo apt install mysql-server 
 
-    # Login into the mysql server
-    mysql -u root
+        # Login into the mysql server
+        mysql -u root
 
-    # Create database and setup the user you will use for your project
-    CREATE DATABASE mydatabase;
-    CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'mypassword';
-    GRANT ALL PRIVILEGES ON mydatabase.* TO 'myuser'@'localhost';
-    USE mydatabase;
-    ```
-    - The previous method will make everything connect which you will be able to setup on the file "db.php"
+        # Create database and setup the user you will use for your project
+        CREATE DATABASE mydatabase;
+        CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'mypassword';
+        GRANT ALL PRIVILEGES ON mydatabase.* TO 'myuser'@'localhost';
+        USE mydatabase;
+        ```
+    - The previous method will make everything connect which you will be able to setup on the file **db.php**
 
 
 6. **Access the website**:
@@ -88,7 +88,7 @@ This is a simple **Bookstore Web Application** that allows users to browse and s
 
 - **Home Page**: Browse through the available books.
 - **Search Bar**: Enter a book title, author, or genre to filter the book list dynamically.
-- **Book Details**: Click on a book to view detailed information.
+<!--- **Book Details**: Click on a book to view detailed information.-->
 - **Admin Dashboard**: Functionality for creating more books and be able to lend them out and see the users which you lended them to.
 - **User Dashboard**: Functionality for being able to borrow books and return them.
 
