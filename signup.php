@@ -2,10 +2,16 @@
 require "db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $fullname = $_POST["fullname"];
+    $email = $_POST["email"];
+    $role = $_POST["role"];
     $username = $_POST["username"];
     $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Hash password
 
-    $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
+    $stmt = $conn->prepare("INSERT INTO users (fullname, email, role, username, password) VALUES (:fullname, :email, :role, :username, :password)");
+    $stmt->bindParam(":username", $fullname);
+    $stmt->bindParam(":username", $email);
+    $stmt->bindParam(":username", $role);
     $stmt->bindParam(":username", $username);
     $stmt->bindParam(":password", $password);
 
@@ -100,7 +106,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary">
+              Register
+              <div id="spinner" style="display:none;"></div>
+            </button>
           </form>
 
           <p class="auth-redirect">

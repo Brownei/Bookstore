@@ -1,9 +1,9 @@
 <?php
-$host = "mysql-db";
+$host = "127.0.0.1";
 $dbname = "db";
 $dbport = "3306";
 $username = "db"; // Change if using a different user
-$password = "db"; // Change if using a password
+$password = "myp@ssword1234"; // Change if using a password
 
 try {
     $conn = new PDO("mysql:host=$host;port=$dbport;dbname=$dbname", $username, $password);
@@ -28,7 +28,7 @@ try {
         published_year INT NOT NULL
     );
 
-    CREATE TABLE borrowed_books (
+    CREATE TABLE IF NOT EXISTS borrowed_books (
         id INT AUTO_INCREMENT PRIMARY KEY,
         user_id INT NOT NULL,
         book_id INT NOT NULL,
@@ -41,7 +41,6 @@ try {
     ";
 
     $conn->exec($sql);
-    echo "Database tables are ready! ✅";
 } catch (PDOException $e) {
     die("Connection failed: " . $e->getMessage());
 }

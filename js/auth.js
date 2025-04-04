@@ -92,6 +92,10 @@ function initializeSignupForm(form) {
   form.addEventListener("submit", function(event) {
     event.preventDefault();
 
+    // For the button
+    const signupBtn = form.querySelectorAll(".btn")
+    const spinner = document.getElementById("spinner")
+
     // Get form values
     const fullname = document.getElementById("fullname").value.trim();
     const email = document.getElementById("email").value.trim();
@@ -101,6 +105,7 @@ function initializeSignupForm(form) {
 
     // Clear previous errors
     clearErrors();
+
 
     // Validate form
     let isValid = true;
@@ -138,8 +143,17 @@ function initializeSignupForm(form) {
 
     // If form is valid, proceed with signup
     if (isValid) {
+      signupBtn.textContent = ""
+      signupBtn.ariaDisabled = true
+      spinner.style.display = 'inline-block'
       signup(fullname, email, username, password, role);
     }
+
+    setTimeout(() => {
+      signupBtn.ariaDisabled = false
+      signupBtn.textContent = 'Register'
+      spinner.style.display = 'none'
+    }, 5000)
   });
 }
 
@@ -275,10 +289,8 @@ function login(username, password, role) {
   // Simulate redirect after delay
   setTimeout(() => {
     if (role === "admin") {
-      alert("Redirecting to admin dashboard...");
       window.location.replace("admin-dashboard/admin-dashboard.php")
     } else {
-      alert("Redirecting to user dashboard...");
       window.location.replace("user-dashboard/user-dashboard.php")
     }
   }, 1500);
@@ -340,7 +352,12 @@ function signup(fullname, email, username, password, role) {
   showSuccess("Account created successfully! Redirecting to login...");
 
   // Simulate redirect after delay
-  setTimeout(() => {
-    alert("Redirecting to login page...");
-  }, 2000);
+  //setTimeout(() => {
+  //  if (role === "admin") {
+  //    window.location.replace("admin-dashboard/admin-dashboard.php")
+  //  } else {
+  //    window.location.replace("user-dashboard/user-dashboard.php")
+  //  }
+  //}, 1500);
+
 }
