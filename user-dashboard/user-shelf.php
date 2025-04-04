@@ -15,7 +15,9 @@
       <!-- Sidebar -->
       <aside class="sidebar">
         <div class="logo-container">
-          <h1 class="logo"><i class="fas fa-book-open"></i> BookHive</h1>
+          <a class="logo-link" href="user-dashboard.php">
+                      <h1 class="logo"><i class="fas fa-book-open"></i> BookHive</h1>
+          </a>
         </div>
 
         <nav class="sidebar-nav">

@@ -1,11 +1,12 @@
 <?php
-$host = "localhost";
+$host = "mysql-db";
 $dbname = "db";
+$dbport = "3306";
 $username = "db"; // Change if using a different user
 $password = "db"; // Change if using a password
 
 try {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $conn = new PDO("mysql:host=$host;port=$dbport;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
    $sql = "

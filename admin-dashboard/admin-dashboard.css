@@ -1,5 +1,5 @@
 /* ===== ADMIN DASHBOARD SPECIFIC STYLES ===== */
-@import "user-dashboard.css";
+@import "/user-dashboard/user-dashboard.css";
 /* Add Book Button */
 .add-book-btn {
   background-color: var(--accent-color);

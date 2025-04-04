@@ -20,6 +20,10 @@
   transition: color 0.2s;
 }
 
+.logo-link {
+  text-decoration: none;
+}
+
 .tab-btn:hover {
   color: var(--accent-color);
 }
@@ -61,7 +65,9 @@
   padding: 1.5rem;
   display: flex;
   gap: 1.5rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .shelf-book-card:hover {

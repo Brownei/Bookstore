@@ -15,18 +15,20 @@
       <!-- Sidebar -->
       <aside class="sidebar">
         <div class="logo-container">
-          <h1 class="logo"><i class="fas fa-book-open"></i> BookHive</h1>
+          <a class="logo-link" href="#">
+                      <h1 class="logo"><i class="fas fa-book-open"></i> BookHive</h1>
+          </a>
         </div>
 
         <nav class="sidebar-nav">
           <ul>
             <li class="active">
-              <a href="admin-dashboard.html"
+              <a href="#"
                 ><i class="fas fa-home"></i> Home</a
               >
             </li>
             <li>
-              <a href="/admin-users.html"><i class="fas fa-users"></i> Users</a>
+              <a href="admin-users.php"><i class="fas fa-users"></i> Users</a>
             </li>
           </ul>
         </nav>
