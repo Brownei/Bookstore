@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookHive - Sign Up</title>
+    <link rel="stylesheet" href="auth-globals.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Logo positioned at the top -->
+    <div class="logo-container">
+      <h1 class="logo"><i class="fas fa-book-open"></i> BookHive</h1>
+    </div>
+
+    <div class="auth-container">
+      <div class="auth-card">
+        <div class="auth-content">
+          <h2 class="auth-title">Create Account</h2>
+          <p class="auth-subtitle">Enter your details to Register</p>
+
+          <form method="post" id="signupForm" class="auth-form">
+            <div class="form-group">
+              <label for="fullname">Full Name</label>
+              <input
+                id="fullname"
+                name="fullname"
+                type="text"
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter your email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input
+                id="username"
+                name="username"
+                type="text"
+                placeholder="Choose a username"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="password-input-container">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="Create a password"
+                />
+                <button
+                  type="button"
+                  class="toggle-password"
+                  aria-label="Toggle password visibility"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="role">Role</label>
+              <div class="select-container">
+                <select id="role" name="role">
+                  <option value="" disabled selected>Select your role</option>
+                  <option value="user">User</option>
+                  <option value="admin">Administrator</option>
+                </select>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <span>Register</span>
+              <div id="spinner" style="display: none"></div>
+            </button>
+          </form>
+
+          <p class="auth-redirect">
+            Already have an Account? <a href="index.php">Login</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="illustration">
+        <img src="/illustration.png" class="auth-illustration" />
+      </div>
+    </div>
+
+    <script type="module" src="/js/auth.js"></script>
+  </body>
+</html>

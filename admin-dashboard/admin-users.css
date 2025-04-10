@@ -1,0 +1,269 @@
+/* ===== ADMIN USERS PAGE SPECIFIC STYLES ===== */
+
+/* Section header with title and add user button */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+/* Add user button */
+.add-user-btn {
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.add-user-btn:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Users table container */
+.users-table-container {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Users table */
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th {
+  background-color: var(--accent-color);
+  color: white;
+  text-align: left;
+  padding: 1rem;
+  font-weight: 500;
+}
+
+.users-table th:first-child {
+  padding-left: 1.5rem;
+}
+
+.users-table th:last-child {
+  width: 60px;
+}
+
+.users-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.users-table td:first-child {
+  padding-left: 1.5rem;
+}
+
+.users-table tr:last-child td {
+  border-bottom: none;
+}
+
+.users-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* User name cell with avatar */
+.user-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-avatar-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.user-avatar-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar-nav button {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  color: var(--primary-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  border-left: 3px solid transparent;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.sidebar-nav button i {
+  margin-right: 0.75rem;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar-nav li.active button {
+  background-color: rgba(93, 60, 49, 0.1);
+  color: var(--accent-color);
+  border-left-color: var(--accent-color);
+}
+
+.sidebar-nav button:hover {
+  background-color: rgba(93, 60, 49, 0.05);
+}
+
+/* User actions button and menu */
+.user-actions-btn {
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #666;
+  position: relative;
+}
+
+.user-actions-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.users-table td:last-child {
+  position: relative; /* Create positioning context */
+}
+
+.user-actions-menu {
+  position: absolute;
+  top: 50%; /* Center vertically relative to the cell */
+  transform: translateY(-50%); /* Offset by half its height */
+  right: 40px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  z-index: 10;
+  display: none;
+}
+
+.user-actions-menu::before {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: 10px;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  transform: rotate(45deg);
+  box-shadow: 2px -2px 3px rgba(0, 0, 0, 0.05);
+}
+
+.user-actions-menu.active {
+  display: block;
+}
+
+.user-actions-menu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.user-actions-menu button:hover {
+  background-color: #f5f5f5;
+}
+
+.user-actions-menu .delete-user-btn {
+  color: #e53e3e;
+}
+
+.user-actions-menu .delete-user-btn:hover {
+  background-color: #fff5f5;
+}
+
+/* Form select styles */
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: white;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(93, 60, 49, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .users-table th:nth-child(4),
+  .users-table td:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .add-user-btn {
+    align-self: stretch;
+  }
+
+  .users-table th:nth-child(3),
+  .users-table td:nth-child(3) {
+    display: none;
+  }
+
+  .user-name-cell span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .users-table {
+    display: block;
+    overflow-x: auto;
+  }
+}

@@ -1,0 +1,321 @@
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* ===== VARIABLES ===== */
+:root {
+  --primary-bg: #f8f3eb;
+  --card-bg: #ffffff;
+  --primary-text: #333333;
+  --secondary-text: #666666;
+  --accent-color: #5d3c31;
+  --border-color: #e0e0e0;
+  --input-bg: #ffffff;
+  --input-border: #e0e0e0;
+  --input-focus: #5d3c31;
+  --error-color: #e53e3e;
+  --success-color: #38a169;
+}
+
+/* ===== BODY STYLES ===== */
+body {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== LOGO STYLES ===== */
+.logo-container {
+  padding: 1.5rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ===== LAYOUT STYLES ===== */
+/* Main container for the auth pages */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  padding: 0 2rem 2rem;
+  position: relative;
+}
+
+#spinner {
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Auth card styling */
+.auth-card {
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.auth-content {
+  padding: 2rem;
+}
+
+/* Illustration container */
+.illustration {
+  display: none; /* Hidden on mobile */
+}
+
+.auth-illustration {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== TYPOGRAPHY ===== */
+/* Main title (Welcome, Create Account) */
+.auth-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--primary-text);
+}
+
+/* Subtitle below the main title */
+.auth-subtitle {
+  color: var(--secondary-text);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Links styling */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Text for redirecting to other auth pages */
+.auth-redirect {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--secondary-text);
+}
+
+/* ===== FORM ELEMENTS ===== */
+/* Form container */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Form group for input + label */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Label styling */
+label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--primary-text);
+}
+
+/* Input fields */
+input,
+select {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--input-border);
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  width: 100%;
+  background-color: var(--input-bg);
+  color: var(--primary-text);
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 2px rgba(93, 60, 49, 0.1);
+}
+
+/* Password input container for the eye icon */
+.password-input-container {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+}
+
+.toggle-password:hover {
+  color: var(--accent-color);
+}
+
+/* Select container for custom dropdown */
+.select-container {
+  position: relative;
+}
+
+.select-container select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2.5rem;
+}
+
+.select-container i {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #999;
+}
+
+/* Button styles */
+.btn {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+  font-weight: 500;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #4a3026;
+}
+
+/* ===== ERROR STYLES ===== */
+.error-message {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.input-error {
+  border-color: var(--error-color);
+}
+
+/* ===== SUCCESS STYLES ===== */
+.success-message {
+  color: var(--success-color);
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #f0fff4;
+  border: 1px solid #c6f6d5;
+  border-radius: 0.25rem;
+}
+
+.error-req-message {
+  color: var(--error-color);
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #f0fff4;
+  border: 1px solid #c6f6d5;
+  border-radius: 0.25rem;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (min-width: 768px) {
+  .auth-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0 4rem 2rem;
+  }
+
+  .auth-card {
+    margin: 0;
+  }
+
+  /* Show the illustration on larger screens */
+  .illustration {
+    display: block;
+    flex: 1;
+    max-width: 50%;
+    text-align: center;
+  }
+
+  .auth-illustration {
+    max-width: 100%;
+    max-height: 80vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo-container {
+    padding: 2rem 6rem;
+  }
+
+  .auth-container {
+    padding: 0 6rem 2rem;
+  }
+
+  .auth-card {
+    max-width: 500px;
+  }
+}
