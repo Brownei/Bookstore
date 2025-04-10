@@ -102,7 +102,7 @@ $available_books = array_values($available_books);
               <button class="borrow-btn" data-book-id="<?php echo $book['id']; ?>">Borrow</button>
             </div>
             <?php endforeach; ?>
-                     </div>
+            </div>
         </section>
       </main>
     </div>
