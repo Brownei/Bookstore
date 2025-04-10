@@ -97,7 +97,7 @@ $available_books = array_values($available_books);
               <p class="book-author"><?php echo htmlspecialchars($book['author']); ?></p>
               <div class="book-quantity">
                 <p>Quantity: </p>
-                              <span class="book-quantity-number"><?php echo htmlspecialchars($book['quantity']); ?></span>
+                <span class="book-quantity-number"><?php echo htmlspecialchars($book['quantity']); ?></span>
               </div>
               <button class="borrow-btn" data-book-id="<?php echo $book['id']; ?>">Borrow</button>
             </div>
